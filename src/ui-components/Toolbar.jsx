@@ -92,15 +92,15 @@ export default function Toolbar(props) {
         justifyContent="center"
         fontFamily="Roboto"
         top="9px"
-        left="197px"
-        width="68px"
+        left="179px"
+        width="105px"
         fontSize="24px"
         lineHeight="28.125px"
         position="absolute"
         fontWeight="400"
         direction="column"
         height="83px"
-        children="Login"
+        children="Add Tab"
         {...getOverrideProps(overrides, "View.Text[1]")}
       ></Text>
       <Text
@@ -122,6 +122,16 @@ export default function Toolbar(props) {
         children="Tabs"
         {...getOverrideProps(overrides, "View.Text[2]")}
       ></Text>
+      <View
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(0,30.939997471868992,110.50000101327896,1)"
+        top="100px"
+        left="0px"
+        width="200px"
+        position="absolute"
+        height="800px"
+        {...getOverrideProps(overrides, "View.View[3]")}
+      ></View>
     </View>
   );
 }
