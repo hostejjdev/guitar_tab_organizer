@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-guitartaborganizer-dev-144544-authRole",
+      "UnauthRoleArn": "arn:aws:iam::862743413631:role/amplify-guitartaborganizer-dev-144544-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::862743413631:role/amplify-guitartaborganizer-dev-144544-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-guitartaborganizer-dev-144544-deployment",
+      "UnauthRoleName": "amplify-guitartaborganizer-dev-144544-unauthRole",
+      "StackName": "amplify-guitartaborganizer-dev-144544",
+      "StackId": "arn:aws:cloudformation:us-east-1:862743413631:stack/amplify-guitartaborganizer-dev-144544/43fec510-5c4d-11ec-ac04-0aeee39cd733",
+      "AmplifyAppId": "d37xk5hviqcf62"
+    }
+  }
+}
