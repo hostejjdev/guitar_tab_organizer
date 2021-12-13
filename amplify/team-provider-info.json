@@ -10,6 +10,11 @@
       "StackName": "amplify-guitartaborganizer-dev-144544",
       "StackId": "arn:aws:cloudformation:us-east-1:862743413631:stack/amplify-guitartaborganizer-dev-144544/43fec510-5c4d-11ec-ac04-0aeee39cd733",
       "AmplifyAppId": "d37xk5hviqcf62"
+    },
+    "categories": {
+      "auth": {
+        "guitartaborganizerfa2a470e": {}
+      }
     }
   }
 }
