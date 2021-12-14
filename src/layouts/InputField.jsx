@@ -15,7 +15,7 @@ export default function InputField(props) {
     <View
       width="615px"
       padding="0px 0px 0px 0px"
-      backgroundColor="rgba(255,255,255,1)"
+      backgroundColor="rgba(255,255,255,0)"
       overflow="hidden"
       position="relative"
       height="33px"

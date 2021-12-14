@@ -7,26 +7,33 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import SaveButton from "./SaveButton";
 import { Text, View } from "@aws-amplify/ui-react";
 import InputField from "./InputField";
-import SaveButton from "./SaveButton";
 export default function InputForm(props) {
   const { overrides: overridesProp, ...rest } = props;
   const overrides = { ...overridesProp };
   return (
     <View
-      width="687px"
+      width="1000px"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(82.87499696016312,138.12497466802597,221.00000202655792,1)"
       overflow="hidden"
       position="relative"
-      height="368px"
+      height="1300px"
       {...rest}
       {...getOverrideProps(overrides, "View")}
     >
+      <SaveButton
+        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+        position="absolute"
+        top="226px"
+        left="412px"
+        {...getOverrideProps(overrides, "View.SaveButton[0]")}
+      ></SaveButton>
       <InputField
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+        backgroundColor="rgba(255,255,255,0)"
         overflow="hidden"
         top="46px"
         left="31px"
@@ -58,7 +65,7 @@ export default function InputForm(props) {
         ></View>
         <Text
           padding="0px 0px 0px 0px"
-          color="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+          color="rgba(255,255,255,1)"
           textAlign="left"
           display="flex"
           justifyContent="center"
@@ -78,7 +85,7 @@ export default function InputForm(props) {
       </InputField>
       <InputField
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+        backgroundColor="rgba(255,255,255,0)"
         overflow="hidden"
         top="106px"
         left="31px"
@@ -110,7 +117,7 @@ export default function InputForm(props) {
         ></View>
         <Text
           padding="0px 0px 0px 0px"
-          color="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+          color="rgba(255,255,255,1)"
           textAlign="left"
           display="flex"
           justifyContent="center"
@@ -128,20 +135,13 @@ export default function InputForm(props) {
           {...getOverrideProps(overrides, "View.InputField[1].Text[0]")}
         ></Text>
       </InputField>
-      <SaveButton
-        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
-        position="absolute"
-        top="286px"
-        left="30px"
-        {...getOverrideProps(overrides, "View.SaveButton[0]")}
-      ></SaveButton>
       <InputField
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+        backgroundColor="rgba(255,255,255,0)"
         overflow="hidden"
         top="166px"
-        left="30px"
-        width="278px"
+        left="31px"
+        width="277px"
         position="absolute"
         height="33px"
         {...getOverrideProps(overrides, "View.InputField[2]")}
@@ -169,7 +169,7 @@ export default function InputForm(props) {
         ></View>
         <Text
           padding="0px 0px 0px 0px"
-          color="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+          color="rgba(255,255,255,1)"
           textAlign="left"
           display="flex"
           justifyContent="center"
@@ -189,11 +189,11 @@ export default function InputForm(props) {
       </InputField>
       <InputField
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+        backgroundColor="rgba(255,255,255,0)"
         overflow="hidden"
         top="226px"
-        left="30px"
-        width="278px"
+        left="31px"
+        width="277px"
         position="absolute"
         height="33px"
         {...getOverrideProps(overrides, "View.InputField[3]")}
@@ -221,7 +221,7 @@ export default function InputForm(props) {
         ></View>
         <Text
           padding="0px 0px 0px 0px"
-          color="rgba(229.00000154972076,229.00000154972076,229.00000154972076,1)"
+          color="rgba(255,255,255,1)"
           textAlign="left"
           display="flex"
           justifyContent="center"
@@ -239,6 +239,16 @@ export default function InputForm(props) {
           {...getOverrideProps(overrides, "View.InputField[3].Text[0]")}
         ></Text>
       </InputField>
+      <View
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(196.00000351667404,196.00000351667404,196.00000351667404,1)"
+        top="323px"
+        left="100px"
+        width="800px"
+        position="absolute"
+        height="923px"
+        {...getOverrideProps(overrides, "View.View[0]")}
+      ></View>
     </View>
   );
 }

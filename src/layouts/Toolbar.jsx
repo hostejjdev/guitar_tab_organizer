@@ -7,27 +7,36 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Icon, Text, View } from "@aws-amplify/ui-react";
+import { Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function Toolbar(props) {
   const { overrides: overridesProp, ...rest } = props;
   const overrides = { ...overridesProp };
   return (
     <View
-      width="1440px"
+      width="2000px"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
       overflow="hidden"
       position="relative"
-      height="900px"
+      height="1400px"
       {...rest}
       {...getOverrideProps(overrides, "View")}
     >
+      <Image
+        width="2048px"
+        padding="0px 0px 0px 0px"
+        position="absolute"
+        top="-88px"
+        left="120px"
+        height="1536px"
+        {...getOverrideProps(overrides, "View.Image[0]")}
+      ></Image>
       <View
         padding="0px 0px 0px 0px"
-        backgroundColor="rgba(82.87499696016312,138.12497466802597,221.00000202655792,1)"
+        backgroundColor="rgba(0,0,0,1)"
         top="0px"
         left="0px"
-        width="1440px"
+        width="2000px"
         position="absolute"
         height="100px"
         {...getOverrideProps(overrides, "View.View[0]")}
@@ -69,7 +78,7 @@ export default function Toolbar(props) {
         left="0px"
         width="200px"
         position="absolute"
-        height="800px"
+        height="1300px"
         {...getOverrideProps(overrides, "View.View[1]")}
       ></View>
     </View>
