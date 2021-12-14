@@ -1,0 +1,91 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-guitartaborganizer-dev-144544-authRole",
+      "UnauthRoleArn": "arn:aws:iam::862743413631:role/amplify-guitartaborganizer-dev-144544-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::862743413631:role/amplify-guitartaborganizer-dev-144544-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-guitartaborganizer-dev-144544-deployment",
+      "UnauthRoleName": "amplify-guitartaborganizer-dev-144544-unauthRole",
+      "StackName": "amplify-guitartaborganizer-dev-144544",
+      "StackId": "arn:aws:cloudformation:us-east-1:862743413631:stack/amplify-guitartaborganizer-dev-144544/43fec510-5c4d-11ec-ac04-0aeee39cd733",
+      "AmplifyAppId": "d37xk5hviqcf62"
+    }
+  },
+  "auth": {
+    "guitartaborganizerfa2a470e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "UserPoolId": "us-east-1_cJqmztV0u",
+        "AppClientIDWeb": "6a56irje3vnasir4k4etfok3s5",
+        "AppClientID": "64mh16v4t28bdicn3q7h9a41b0",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:862743413631:userpool/us-east-1_cJqmztV0u",
+        "UserPoolName": "guitartaborganizerfa2a470e_userpool_fa2a470e"
+      },
+      "lastPushTimeStamp": "2021-12-13T22:26:22.683Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-guitartaborganizer-dev-144544-deployment/amplify-cfn-templates/auth/guitartaborganizerfa2a470e-cloudformation-template.json",
+        "logicalId": "authguitartaborganizerfa2a470e"
+      },
+      "lastPushDirHash": "poh4DjSVgfRbudsbwAtvEMhpNhc="
+    }
+  },
+  "api": {
+    "guitartaborganizer": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authguitartaborganizerfa2a470e"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "cqjqxv2qx5d2fittdtjflvcaba",
+        "GraphQLAPIEndpointOutput": "https://rznrdzqxrfewzlbfmihlaxyzrm.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-nszl7sqrdbbmbgln2kzaggrpem"
+      },
+      "lastPushTimeStamp": "2021-12-13T22:26:22.683Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-guitartaborganizer-dev-144544-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiguitartaborganizer"
+      },
+      "lastPushDirHash": "W27u8+OhQgA1zSw0TfigIJBt0+I="
+    }
+  }
+}

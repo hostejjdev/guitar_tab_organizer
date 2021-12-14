@@ -7,13 +7,17 @@ import Amplify from "aws-amplify";
 import awsconfig from './aws-exports';
 import awsExports from "./aws-exports";
 import config from './aws-exports';
+import { AmplifyProvider } from 'amplified' 
+
 Amplify.configure(awsconfig);
 Amplify.configure(config);
 Amplify.configure(awsExports);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AmplifyProvider config={awsExports}>
+      <App />
+    </AmplifyProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

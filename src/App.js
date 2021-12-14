@@ -1,20 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import { Toolbar } from './ui-components';
+import { Authenticator } from '@aws-amplify/ui-react'
+import '@aws-amplify/ui-react/styles.css';
+import { GTOFrame } from './layouts';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>We now have Auth!</h1>
-      </header>
-      <Toolbar />
-      <AmplifySignOut />
+    <div>
+      <Authenticator>
+        {({ signOut, user }) => (
+          <div className="App">
+            <GTOFrame>
+      	    </GTOFrame>
+            <button onClick={signOut}>Sign out</button>
+          </div>
+        )}
+      </Authenticator>
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;

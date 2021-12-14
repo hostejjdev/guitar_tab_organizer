@@ -1,0 +1,8 @@
+type TabModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  songname: String
+  artistname: String
+  genre: String
+  learned: Boolean
+  recording: Boolean
+}
