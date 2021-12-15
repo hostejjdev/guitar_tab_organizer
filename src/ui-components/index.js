@@ -4,6 +4,7 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as ViewTabButton } from "./ViewTabButton";
 export { default as SaveButton } from "./SaveButton";
 export { default as LearnedField } from "./LearnedField";
 export { default as InputForm } from "./InputForm";

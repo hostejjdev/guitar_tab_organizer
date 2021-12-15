@@ -10,6 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import Toolbar from "./Toolbar";
 import AddTabButtonDefault from "./AddTabButtonDefault";
 import InputForm from "./InputForm";
+import ViewTabButton from "./ViewTabButton";
 import { View } from "@aws-amplify/ui-react";
 export default function GTOFrame(props) {
   const { overrides: overridesProp, ...rest } = props;
@@ -43,6 +44,12 @@ export default function GTOFrame(props) {
         position="absolute"
         {...getOverrideProps(overrides, "View.InputForm[0]")}
       ></InputForm>
+      <ViewTabButton
+        top="24px"
+        left="347px"
+        position="absolute"
+        {...getOverrideProps(overrides, "View.ViewTabButton[0]")}
+      ></ViewTabButton>
     </View>
   );
 }
