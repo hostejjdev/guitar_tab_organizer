@@ -24,13 +24,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "genre": {
-                    "name": "genre",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
                 "learned": {
                     "name": "learned",
                     "isArray": false,
@@ -38,10 +31,17 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "recording": {
-                    "name": "recording",
+                "recorded": {
+                    "name": "recorded",
                     "isArray": false,
                     "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tab": {
+                    "name": "tab",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -90,5 +90,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "12381875f74ce1833e40d0e80bd9692e"
+    "version": "2c6ef8cde96285e3c6ab4da0ecd5bdef"
 };

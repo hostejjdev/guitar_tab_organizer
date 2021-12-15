@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "guitartaborganizer",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-d1effcc9-1551-4dff-a52d-7d74068fcdba/amplify/backend/api/guitartaborganizer/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-bb4a3c77-3cca-477a-bbaa-d3a66dd10ce3/amplify/backend/api/guitartaborganizer/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "keyDescription": "api key description",

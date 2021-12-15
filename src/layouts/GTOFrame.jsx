@@ -11,6 +11,9 @@ import Toolbar from "./Toolbar";
 import AddTabButtonDefault from "./AddTabButtonDefault";
 import InputForm from "./InputForm";
 import { View } from "@aws-amplify/ui-react";
+import { DataStore } from '@aws-amplify/datastore';
+import { TabModel } from '../models';
+
 export default class GTOFrame extends React.Component {
   constructor(props) {
     super(props);
@@ -18,13 +21,17 @@ export default class GTOFrame extends React.Component {
       addTabVisible: false,
       song: '',
       artist: '',
-      lchecked: true
+      lchecked: false,
+      rchecked: false,
+      tab: ''
     }
 
     this.saveTabClick = this.saveTabClick.bind(this);
     this.songNameUpdate = this.songNameUpdate.bind(this);
     this.artistNameUpdate = this.artistNameUpdate.bind(this);
     this.learnedBoxUpdate = this.learnedBoxUpdate.bind(this);
+    this.recordedBoxUpdate = this.recordedBoxUpdate.bind(this);
+    this.tabFieldUpdate = this.tabFieldUpdate.bind(this);
   }
 
   addTabClick() {
@@ -33,10 +40,23 @@ export default class GTOFrame extends React.Component {
 
   saveTabClick(event) {
     this.setState(prevState => ({ addTabVisible: !prevState.addTabVisible }));
-    alert("A song name was submitted: " + this.state.song +  "   artist   " + this.state.artist);
     event.preventDefault();
+
+    DataStore.save(
+	new TabModel({
+		"songname": this.state.song,
+		"artistname": this.state.artist,
+		"learned": this.state.lchecked,
+		"recorded": this.state.rchecked,
+		"tab": this.state.tab
+	})
+    );
+
     this.setState({song: ''});
     this.setState({artist: ''});
+    this.setState({ lchecked: false})
+    this.setState({ rchecked: false})
+    this.setState({ tab: ''}); 
   }
 
   songNameUpdate(event){
@@ -48,8 +68,15 @@ export default class GTOFrame extends React.Component {
   }
 
   learnedBoxUpdate(event){
-    alert("clicked the box");
     this.setState({ lchecked: !this.state.lchecked})
+  }
+
+  recordedBoxUpdate(event){
+    this.setState({ rchecked: !this.state.rchecked})
+  }
+
+  tabFieldUpdate(event){
+    this.setState({tab: event.target.value});
   }
 
 render(){
@@ -74,7 +101,7 @@ render(){
       ></AddTabButtonDefault>
       { this.state.addTabVisible ?
       <InputForm savefunc={this.saveTabClick} songfunc={this.songNameUpdate} artistfunc={this.artistNameUpdate}
-        learnedfunc={this.learnedBoxUpdate}
+        learnedfunc={this.learnedBoxUpdate} recordedfunc={this.recordedBoxUpdate} tabfunc={this.tabFieldUpdate}
         top="100px"
         left="200px"
         position="absolute"

@@ -8,19 +8,19 @@
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Text, View } from "@aws-amplify/ui-react";
-export default function RecordedField(props) {
-  const { overrides: overridesProp, ...rest } = props;
-  const overrides = { ...overridesProp };
+export default class RecordedField extends React.Component {
+
+render(){
   return (
     <View
       width="277px"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,0)"
       overflow="hidden"
-      position="relative"
+      position="absolute"
+      left="31px"
+      top="233px"
       height="33px"
-      {...rest}
-      {...getOverrideProps(overrides, "View")}
     >
       <View
         padding="0px 0px 0px 0px"
@@ -31,18 +31,18 @@ export default function RecordedField(props) {
         width="233px"
         position="absolute"
         height="33px"
-        {...getOverrideProps(overrides, "View.View[0]")}
       ></View>
       <View
         padding="0px 0px 0px 0px"
         backgroundColor="rgba(196.00000351667404,196.00000351667404,196.00000351667404,1)"
         top="0px"
         left="233px"
-        width="382px"
+        width="44px"
         position="absolute"
         height="33px"
-        {...getOverrideProps(overrides, "View.View[1]")}
-      ></View>
+      >
+      <input type="checkbox" value={this.props.rchecked} checked={this.props.rchecked} onChange={this.props.recordedfunc} />
+      </View>
       <Text
         padding="0px 0px 0px 0px"
         color="rgba(255,255,255,1)"
@@ -60,8 +60,8 @@ export default function RecordedField(props) {
         direction="column"
         height="19px"
         children="Recorded"
-        {...getOverrideProps(overrides, "View.Text[0]")}
       ></Text>
     </View>
   );
+}
 }

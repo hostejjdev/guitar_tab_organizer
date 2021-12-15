@@ -37,12 +37,12 @@ render(){
         backgroundColor="rgba(196.00000351667404,196.00000351667404,196.00000351667404,1)"
         top="0px"
         left="233px"
-        width="382px"
+        width="44px"
         position="absolute"
         height="33px"
       >
+      <input type="checkbox" value={this.props.lchecked} checked={this.props.lchecked} onChange={this.props.learnedfunc} /> 
       </View>
-      <input type="checkbox" value={this.props.lchecked} checked={this.props.lchecked} onChange={this.props.learnedfunc}></input> 
       <Text
         padding="0px 0px 0px 0px"
         color="rgba(255,255,255,1)"

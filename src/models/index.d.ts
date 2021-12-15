@@ -12,9 +12,9 @@ export declare class TabModel {
   readonly id: string;
   readonly songname?: string;
   readonly artistname?: string;
-  readonly genre?: string;
   readonly learned?: boolean;
-  readonly recording?: boolean;
+  readonly recorded?: boolean;
+  readonly tab?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<TabModel, TabModelMetaData>);

@@ -13,6 +13,7 @@ import { View } from "@aws-amplify/ui-react";
 import ArtistField from "./ArtistField";
 import RecordedField from "./RecordedField";
 import LearnedField from "./LearnedField";
+import { TextInput } from "react-native";
 export default class InputForm extends React.Component  {
 
 render(){
@@ -46,13 +47,16 @@ render(){
         width="800px"
         position="absolute"
         height="923px"
-      ></View>
+      >
+        <TextInput onChange={this.props.tabfunc} multiline={true}
+          style = {{ height: 923, fontSize:18, width:"800px", marginLeft: 0, marginRight: 0}}/>
+      </View>
       <ArtistField artistfunc={this.props.artistfunc}
         top="106px"
         left="31px"
         position="absolute"
       ></ArtistField>
-      <RecordedField
+      <RecordedField recordedfunc={this.props.recordedfunc}
         top="225px"
         left="31px"
         position="absolute"
