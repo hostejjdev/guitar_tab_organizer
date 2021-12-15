@@ -9,6 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import Toolbar from "./Toolbar";
 import AddTabButtonDefault from "./AddTabButtonDefault";
+import ViewTabButton from "./ViewTabButton";
 import InputForm from "./InputForm";
 import { View } from "@aws-amplify/ui-react";
 import { DataStore } from '@aws-amplify/datastore';
@@ -18,7 +19,9 @@ export default class GTOFrame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
       addTabVisible: false,
+      viewTabVisible: false,
       song: '',
       artist: '',
       lchecked: false,
@@ -33,9 +36,16 @@ export default class GTOFrame extends React.Component {
     this.recordedBoxUpdate = this.recordedBoxUpdate.bind(this);
     this.tabFieldUpdate = this.tabFieldUpdate.bind(this);
   }
-
+ 
   addTabClick() {
     this.setState(prevState => ({ addTabVisible: !prevState.addTabVisible }));
+  }
+
+  async viewTabClick() {
+    this.setState(prevState => ({ viewTabVisible: !prevState.viewTabVisible }));
+    const models = await DataStore.query(TabModel);
+    console.log(models);
+    this.state.data = models;
   }
 
   saveTabClick(event) {
@@ -79,7 +89,9 @@ export default class GTOFrame extends React.Component {
     this.setState({tab: event.target.value});
   }
 
+
 render(){
+
   return (
     <View
       width="2000px"
@@ -99,6 +111,11 @@ render(){
         left="143px"
         position="absolute"
       ></AddTabButtonDefault>
+      <ViewTabButton onClick={() => this.viewTabClick()}
+        top="25px"
+        left="347px"
+        position="absolute"
+      ></ViewTabButton>
       { this.state.addTabVisible ?
       <InputForm savefunc={this.saveTabClick} songfunc={this.songNameUpdate} artistfunc={this.artistNameUpdate}
         learnedfunc={this.learnedBoxUpdate} recordedfunc={this.recordedBoxUpdate} tabfunc={this.tabFieldUpdate}
@@ -106,6 +123,21 @@ render(){
         left="200px"
         position="absolute"
       ></InputForm>
+      : null }
+      { this.state.viewTabVisible ?
+      <View
+      top="100px"
+      left="200px"
+      width="1000px"
+      padding="0px 0px 0px 0px"
+      backgroundColor="rgba(255,255,255,1)"
+      position="absolute"
+      height="1300px"
+      >
+        <label>
+          {this.state.data.map(d => (<li key={d.id}>{d.songname}</li>))} 
+        </label>
+      </View>
       : null }
     </View>
   );
