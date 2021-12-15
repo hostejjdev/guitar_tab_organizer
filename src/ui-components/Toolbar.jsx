@@ -15,7 +15,7 @@ export default function Toolbar(props) {
     <View
       width="2000px"
       padding="0px 0px 0px 0px"
-      backgroundColor="rgba(255,255,255,1)"
+      backgroundColor="rgba(255,255,255,0)"
       overflow="hidden"
       position="relative"
       height="1400px"

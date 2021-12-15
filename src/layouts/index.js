@@ -4,9 +4,12 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
+export { default as SaveButton } from "./SaveButton";
+export { default as LearnedField } from "./LearnedField";
+export { default as InputForm } from "./InputForm";
 export { default as AddTabButtonDefault } from "./AddTabButtonDefault";
 export { default as Toolbar } from "./Toolbar";
 export { default as GTOFrame } from "./GTOFrame";
-export { default as InputForm } from "./InputForm";
-export { default as InputField } from "./InputField";
-export { default as SaveButton } from "./SaveButton";
+export { default as ArtistField } from "./ArtistField";
+export { default as SongField } from "./SongField";
+export { default as RecordedField } from "./RecordedField";
